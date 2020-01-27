@@ -11,21 +11,59 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','FrontendController@home') ;
+    
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home','FrontendController@home');
+
+
+Route::get('pagenotfound',['as' => 'notfound','uses' => 'FrontendController@pagenotfound']);
+
+
+
+
+Route::get('company-profile','FrontendController@companyprofile');
+
+Route::get('message-from-ceo','FrontendController@message');
+
+Route::get('our-team','FrontendController@team'); 
+ 
+
+Route::get('service','FrontendController@service');
+
+Route::get('service-detail/{id}','FrontendController@servicedetails');
+   
+
+Route::get('study-abroad-dynamic/{id}','FrontendController@studyabroad');
+
+Route::get('testimonial','FrontendController@testimonial');
+
+Route::get('album','FrontendController@album');
+
+Route::get('gallery/{id}','FrontendController@gallery');
+
+Route::get('class-dynamic/{title}','FrontendController@classdetails');
+
+Route::get('contact', 'FrontendController@contact');
+Route::post('/storecontact','ContactController@store');
+
+
+Auth::routes(['register' => false]);
+Route::get('/admin', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function () {
 
+Route::get('logout','DashboardController@logout')->name('logout');
 Route::get('/admin','DashboardController@dashboard');
 Route::get('cd-admin','DashboardController@home'); 
 Route::post('/quickmail','DashboardController@quickmail');
 Route::get('view-all-mails','DashboardController@view');
-Route::get('view-all-admin','DashboardController@adminview');
+
 Route::get('/deletemail/{id}','DashboardController@del');
 
+Route::get('/view-all-admin','AdminController@adminshow');
+Route::get('/addadmin','AdminController@add');
+Route::post('/storeadmin','AdminController@storeadmin');
+Route::get('/deleteadmin/{id}','AdminController@delete');
 
 //CAROUSEL
 Route::get('/carousel-add','CarouselController@addcarousel');
@@ -41,6 +79,13 @@ Route::post('/aboutstore','AboutController@store');
 Route::get('/abouts-view','AboutController@view');
 Route::post('/updateabout','AboutController@updateabout');
 
+
+//CEo Message
+Route::get('/ceomessage-add','CeoController@add');
+Route::post('/ceomessagestore','CeoController@store');
+Route::get('/ceomessage-view','CeoController@view');
+Route::post('/updateceomessage','CeoController@updateceo');
+Route::get('/editceomessage','CeoController@edit');
 
 //Study Destination
 Route::get('/study-add','StudyController@add');
@@ -65,7 +110,24 @@ Route::get('/deleteservices/{id}','ServiceController@delete');
 //CLASS
 Route::get('/class-add','ClassController@add');
 Route::post('/storeclass','ClassController@store');
+Route::get('/editclass/{id}','ClassController@edit');
+Route::get('class-view','ClassController@view');
+Route::post('/classupdate/{id}','ClassController@updateclass');
+Route::get('/classdetail/{id}','classController@detail');
+Route::get('/deleteclass/{id}','classController@delete');
+Route::post('/classstatus/{id}','classController@statusupdate');
 
+
+//Gallery
+Route::get('/album-add','GalleryController@add');
+Route::post('/storealbum','GalleryController@store');
+Route::get('/album-view','GalleryController@view');
+Route::post('/statusal/{id}','GalleryController@status');
+Route::get('deletealbum/{id}','GalleryController@deletealbum');
+Route::get('deleteimage/{id}','GalleryController@deleteimage');
+Route::get('/image-add/{id}','GalleryController@addimage');
+Route::post('/imagestore/{id}','GalleryController@storeimage');
+Route::get('/image-view/{id}','GalleryController@image');
 
 //Testimonial
 Route::get('/testimonial-add','TestimonialController@add');
@@ -81,9 +143,28 @@ Route::get('/createcontact','ContactController@addcontact');
 Route::get('/viewcontact','ContactController@contact');
 Route::get('/replies','ContactController@reply');
 Route::get('/replycontact/{id}','ContactController@replyform');
-Route::post('/storecontact','ContactController@store');
+
 Route::post('/storereply/{id}','ContactController@storereply');
 Route::get('/deleteinbox/{id}','ContactController@deleteinbox');
 Route::get('/deletereply/{id}','ContactController@deletereply');
+
+
+//Team
+Route::get('/team-add','TeamController@add');
+Route::post('/storeteam','TeamController@store');
+Route::get('/team-view','TeamController@view');
+Route::get('/editteam/{id}','TeamController@edit');
+Route::post('/updateteam/{id}','TeamController@update');
+Route::post('/teamstatus/{id}','TeamController@statusupdate');
+Route::get('/deleteteam/{id}','TeamController@deleteteam');
+
+
+//SEO
+Route::get('/seo-add','SEOController@add');
+Route::get('/seo-view','SEOController@view');
+Route::post('/seostore','SEOController@store');
+Route::get('/editseo/{id}','SEOController@edit');
+Route::post('/updateseo/{id}','SEOController@updateseo');
+Route::get('/deleteseo/{id}','SEOController@delete');
 
 });

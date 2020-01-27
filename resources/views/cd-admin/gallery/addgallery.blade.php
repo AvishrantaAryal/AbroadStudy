@@ -29,11 +29,11 @@ Add Gallery
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Carousel Form</h3>
+              <h3 class="box-title">Album Form</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action= "{{url('storecarousel')}}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action= "{{url('storealbum')}}" enctype="multipart/form-data">
               {{csrf_field()}}
               <div class="box-body">
 
@@ -44,7 +44,7 @@ Add Gallery
                       
                 <input type="text" class="form-control"required="" name="name" id="name" value="{{old('name')}}">
                   </div>
-                </div
+                </div>
                 <div class="form-group">
                   <label for="image" class="col-sm-2 control-label">Image<span style="color: red;">*</span></label>
                       <div class="text text-danger">{{$errors->first('image')}}</div>
@@ -60,7 +60,7 @@ Add Gallery
                       <input type="text" class="form-control"required="" name="altimage" id="altimage" value="{{old('altimage')}}" >
                   </div>
                 </div>
->
+
 
                  <div class="form-group">
             <label for="Status" class="col-sm-2 control-label">Status<span style="color: red;">*</span>
@@ -85,7 +85,7 @@ Add Gallery
               <!-- /.box-body -->
               <div class="box-footer">
                  <a href="{{URL()->Previous()}}" class="btn btn-danger">Cancel</a>
-                <button type="submit" class="btn btn-success pull-right">Add Carousel</button>
+                <button type="submit" class="btn btn-success pull-right">Add Album</button>
               </div>
               <!-- /.box-footer -->
             </form>

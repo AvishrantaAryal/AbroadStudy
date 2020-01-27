@@ -38,6 +38,7 @@ trait studytrait
         $data = $this->insertcontrol();
         $test = $this->insertimage($data['image']);
         $a['image'] = $test;
+        $a['slug'] = str_slug($data['title'],'-');
         $a['created_at'] =Carbon::now('Asia/Kathmandu');
         $replace = array_replace($data,$a);
 
@@ -61,6 +62,7 @@ trait studytrait
             $test = $this->insertimage($data['image']);
             $a['image'] = $test ;
             }
+            $a['slug'] = str_slug($data['title'],'-');
             $a['updated_at'] =Carbon::now('Asia/Kathmandu');
             $replace = array_replace($data,$a);
 
@@ -118,6 +120,7 @@ trait studytrait
                         'why'=>'required',
                         'education'=>'required',
                         'cost'=>'required',
+                        'slug'=>'',
                 ]);
                 return $data;
           }
@@ -137,6 +140,7 @@ trait studytrait
                 'why'=>'required',
                 'education'=>'required',
                 'cost'=>'required',
+                'slug'=>'',
                 ]);
                return $data;
            }

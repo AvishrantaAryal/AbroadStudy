@@ -26,12 +26,12 @@ Home
 				<div class="small-box bg-aqua">
 					<div class="inner">
 					
-						<h3>0</h3>
+						<h3>{{$teams}}</h3>
 
-						<p>News</p>
+						<p>Team Member</p>
 					</div>
 					<div class="icon">
-						<i class="fa fa-copy"></i>
+						<i class="fa fa-users"></i>
 					</div>
 					{{-- <a href="{{url('view-all-user')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
 				</div>
@@ -42,12 +42,12 @@ Home
 				<div class="small-box bg-green">
 					<div class="inner">
 					
-						<h3>0</h3>
+						<h3>{{$std}}</h3>
 
-						<p>Event</p>
+						<p>Destinations</p>
 					</div>
 					<div class="icon">
-						<i class="fa fa-calendar"></i>
+						<i class="fa fa-map-marker"></i>
 					</div>
 					{{-- <a href="{{url('view-all-user')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
 				</div>
@@ -58,9 +58,9 @@ Home
 				<div class="small-box bg-yellow">
 					<div class="inner">
 					
-						<h3>0</h3>
+						<h3>{{$class}}</h3>
 
-						<p>Blog</p>
+						<p>Course</p>
 					</div>
 					<div class="icon">
 						<i class="fa fa-copy"></i>
@@ -74,9 +74,9 @@ Home
 				<div class="small-box bg-red">
 					<div class="inner">
 					
-						<h3>0</h3>
+						<h3>{{$service}}</h3>
 
-						<p>Video</p>
+						<p>Service</p>
 					</div>
 					<div class="icon">
 						<i class="fa fa-calendar"></i>
@@ -161,11 +161,12 @@ Home
 						<ul class="products-list product-list-in-box">
 							<li class="item">
 								<div class="product-info" style="margin-left: 10px;">
-									<a href="javascript:void(0)" class="product-title">Name
+									<a href="javascript:void(0)" class="product-title">{{$user->name}}
 										<span class="label label-success pull-right">Active</span>
+									
 									</a>
 									<span class="product-description">
-										Role
+									{{$user->role}}
 									</span>
 
 								</div>
@@ -174,7 +175,7 @@ Home
 							
 						</ul>
 					</div>
-			
+					
 					<!-- /.box-body -->
 					<div class="box-footer text-center">
 						<a href="{{url('view-all-admin')}}" class="uppercase">View All Users</a>

@@ -33,7 +33,7 @@ Add Study
             <form class="form-horizontal" method="post" action= "{{url('storestudy')}}" enctype="multipart/form-data">
               {{csrf_field()}}
               <div class="box-body">
-
+                  <input type="hidden" name ="slug">
                 <div class="form-group">
                   <label for="name" class="col-sm-2 control-label">Study Destination<span style="color: red;">*</span></label>
                   <div class="text text-danger">{{$errors->first('title')}}</div>
@@ -168,7 +168,7 @@ Add Study
    <!-- /.box-body -->
    <div class="box-footer">
      <a href="{{URL()->Previous()}}" class="btn btn-danger">Cancel</a>
-     <button type="submit" class="btn btn-success pull-right">Add Service</button>
+     <button type="submit" class="btn btn-success pull-right">Add Study Destination</button>
    </div>
    <!-- /.box-footer -->
  </form>

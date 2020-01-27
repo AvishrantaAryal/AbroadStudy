@@ -18,6 +18,7 @@ class CreateStudiesTable extends Migration
              $table->string('title');
             $table->string('image');
             $table->string('altimage');
+            $table->string('slug');
             $table->longtext('summary');
             $table->longtext('description');
             $table->longtext('why');

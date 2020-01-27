@@ -35,7 +35,7 @@ Edit Study
           <form role="form" class="form-horizontal" action= "{{url('/studyupdate/'.$t->id)}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="box-body">
-
+                <input type="hidden" name ="slug" value="{{$t['slug']}}">
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Study Destination<span style="color: red;">*</span></label>
                 <div class="text text-danger">{{$errors->first('title')}}</div>

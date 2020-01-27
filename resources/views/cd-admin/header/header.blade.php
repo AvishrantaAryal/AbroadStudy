@@ -20,7 +20,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{url('public/images/5.jpg')}}" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Abroad Study</span>
+                        <span class="hidden-xs">{{Auth::user()->name}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -29,7 +29,8 @@
 
                             <p>
                            
-                                Name
+                                {{Auth::user()->name}}
+
                                 <small>Role</small>
                             </p>
                         </li>
@@ -39,7 +40,7 @@
                                 <a href="#" class="btn btn-info btn-flat">Profile</a>
                             </div> --}}
                             <div class="pull-right">
-                                <a href="" class="btn btn-danger btn-flat">Sign out</a>
+                                <a href="{{route('logout')}}" class="btn btn-danger btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>
@@ -80,7 +81,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="{{url('/dashboard')}}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="{{url('/admin')}}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li class="header">Admin</li>
             <li class="treeview">
                 <a href="#">
@@ -107,21 +108,22 @@
             <li class="header">About</li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-info"></i> <span>About</span>
+                    <i class="fa fa-home"></i> <span>About</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="{{url('/abouts-add')}}"><i class="fa fa-circle-o"></i>Add About</a></li>
+                    
                     <li><a href="{{url('/abouts-view')}}"><i class="fa fa-circle-o"></i>View About </a></li>
+                    <li class="active"><a href="{{url('/ceomessage-view')}}"><i class="fa fa-circle-o"></i>View CEO Message</a></li>
                 </ul>
             </li>
 
             <li class="header">Gallery</li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-info"></i> <span>Gallery</span>
+                    <i class="fa fa-picture-o"></i> <span>Gallery</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -136,6 +138,15 @@
             <li class="treeview">
                 <a href="{{url('/service-view')}}">
                     <i class="fa fa-list-alt"></i> <span>Services</span>
+                    
+                </a>
+                
+            </li>
+
+                <li class="header">Teams</li>
+            <li class="treeview">
+                <a href="{{url('/team-view')}}">
+                    <i class="fa fa-users"></i> <span>Teams</span>
                     
                 </a>
                 
@@ -184,6 +195,16 @@
                     <li><a href="{{url('/replies')}}"><i class="fa fa-circle-o"></i>View Reply</a></li>
                 </ul>
             </li>
+
+            <li class="header">SEO</li>
+            <li class="treeview">
+                <a href="{{url('/seo-view')}}">
+                    <i class="fa fa-circle"></i> <span>SEO</span>
+                    
+                </a>
+                
+            </li>
+             
 
 
 

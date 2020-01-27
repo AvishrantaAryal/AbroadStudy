@@ -109,7 +109,7 @@ View Study Destination
                 <tr>
                   <th>S.N</th>
                   <th>Name</th>
-                  <th>Ststus</th>
+                  <th>Status</th>
                   <th>Action</th>
                   
                 </tr>
