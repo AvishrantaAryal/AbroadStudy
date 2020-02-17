@@ -2,10 +2,10 @@
 
 <!-- page title -->
 @section('page-title')	
-{{$abroad->seotitle}}
+{{$abroad['seotitle']}}
 @endsection
-@section('description',$abroad->seodescription)
-@section('keywords',$abroad->keywords)
+@section('description',$abroad['seodescription'])
+@section('keywords',$abroad['keywords'])
 
 <!-- page content -->
 @section('content')
@@ -14,14 +14,14 @@
 	<div class="row">
 		<div class="col-md-9">
 			<div class="study-abroad-dynamic-content">
-				<h1>{{$abroad->title}}</h1>
+				<h1>{{$abroad['title']}}</h1>
 
 				<div class="study-abroad-dynamic-image">
-					<img src="{{url('/imageupload/'.$abroad->image)}}" alt="{{$abroad->altimage}}" class="img-fluid" >
+					<img src="{{url('/imageupload/'.$abroad['image'])}}" alt="{{$abroad['altimage']}}" class="img-fluid" >
 				</div>
 
 				<p>
-					{!!$abroad->description!!}
+					{!!$abroad['description']!!}
 				</p>
 			</div>
 
@@ -40,15 +40,15 @@
 
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-						<p>{!!$abroad->why!!}</p>
+						<p>{!!$abroad['why']!!}</p>
 					</div>
 
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-						<p>{!!$abroad->education!!}</p>
+						<p>{!!$abroad['education']!!}</p>
 					</div>
 
 					<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-						<p>{!!$abroad->cost!!}</p>
+						<p>{!!$abroad['cost']!!}</p>
 					</div>
 				</div>
 			</div>

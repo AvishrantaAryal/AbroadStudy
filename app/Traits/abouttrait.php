@@ -18,6 +18,7 @@ trait abouttrait
     public function view(){
     	  $about= DB::table('abouts')->get()->first();
     	  //dd($about);
+          // return $this->apiSuccessResponse($about);
         return view('cd-admin.about.aboutshow',compact('about'));
     }
 

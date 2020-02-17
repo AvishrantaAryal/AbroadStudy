@@ -10,16 +10,16 @@ Gallery | Abroad Studies
 @section('content')
 
 <div class="container pa-t pa-b gallery-card-title">
-	<h1>{{$g->name}}</h1>
+	<h1>{{$g['name']}}</h1>
 	<div class="row">
 		<div class="row">
 			@foreach($images as $im)
 
 			<div class="col-lg-3 col-md-4 col-xs-6">
 				<div class="gallery-card-image">
-					<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="{{url('/imageupload/'.$im->image)}}" data-target="#image-gallery">
+					<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="{{url('/imageupload/'.$im['image'])}}" data-target="#image-gallery">
 						<img class="img-thumbnail"
-						src="{{url('/imageupload/'.$im->image)}}"
+						src="{{url('/imageupload/'.$im['image'])}}"
 						alt="Sample Image">
 					</a>
 				</div>

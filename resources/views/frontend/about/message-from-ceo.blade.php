@@ -2,9 +2,13 @@
 
 <!-- page title -->
 @section('page-title')	
-Message from CEO | Abroad Studies
+@section('page-title')	
+{{$seo['title']}}
 @endsection
 
+
+@section('description',$seo['description'])
+@section('keywords',$seo['keywords'])
 
 <!-- page content -->
 @section('content')
@@ -18,13 +22,13 @@ Message from CEO | Abroad Studies
 				<h1>Message From CEO</h1>
 
 				<div class="message-from-ceo-image">
-					<img src="{{url('/imageupload/'.$msg->image)}}" class="d-block w-100" alt="$msg->altimage">
+					<img src="{{url('/imageupload/'.$msg['image'])}}" class="d-block w-100" alt="{{$msg['altimage']}}">
 
 				</div>
-				<p>{!!$msg->description!!}
+				<p>{!!$msg['description']!!}
 				</p>
 
-				<h5>- {{$msg->name}}</h5>
+				<h5>- {{$msg['name']}}</h5>
 
 		</div>
 	</div>

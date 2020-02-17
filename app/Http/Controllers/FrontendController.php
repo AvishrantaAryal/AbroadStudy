@@ -52,23 +52,25 @@ class FrontendController extends Controller
 
     }
     public function message(){
+        $seo = Seo::where('name','message')->get()->first();
         $sideheader = Study::where('status','active')->orderBy('id','desc')->get();
         $sideheaderclass = Classes::where('status','active')->orderBy('id','desc')->get();
     	$footer = About::get()->first();
     	$msg = Ceo::get()->first();
     	$header = Study::where('status','active')->get();
     	$head = Classes::where('status','active')->get(); 
-    return view('frontend.about.message-from-ceo',compact('msg','header','head','footer','sideheader','sideheaderclass'));
+    return view('frontend.about.message-from-ceo',compact('msg','header','head','footer','sideheader','sideheaderclass','seo'));
     }
 
     public function team(){
+         $seo = Seo::where('name','team')->get()->first();
         $sideheader = Study::where('status','active')->orderBy('id','desc')->get();
         $sideheaderclass = Classes::where('status','active')->orderBy('id','desc')->get();
     	$footer = About::get()->first();
     	$team = Team::where('status','active')->get()->all();
     		$header = Study::where('status','active')->get();
     		$head = Classes::where('status','active')->get();
-    	   return view('frontend.about.our-team',compact('team','header','head','footer','sideheader','sideheaderclass'));
+    	   return view('frontend.about.our-team',compact('team','header','head','footer','sideheader','sideheaderclass','seo'));
     }
 
     public function service(){

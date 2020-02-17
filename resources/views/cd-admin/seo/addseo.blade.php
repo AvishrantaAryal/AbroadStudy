@@ -45,6 +45,8 @@ Add SEO
                     <option value="Testimonial">Testimonial</option>
                     <option value="Gallery">Gallery</option>
                     <option value="Contact">Contact</option>
+                    <option value="team">Team</option>
+                    <option value="message">Message From Ceo</option>
                   </select>
                   
                   

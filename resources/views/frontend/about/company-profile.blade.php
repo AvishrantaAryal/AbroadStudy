@@ -2,12 +2,12 @@
 
 <!-- page title -->
 @section('page-title')	
-{{$seo->title}}
+{{$seo['title']}}
 @endsection
 
 
-@section('description',$seo->description)
-@section('keywords',$seo->keywords)
+@section('description',$seo['description'])
+@section('keywords',$seo['keywords'])
 <!-- page content -->
 @section('content')
 
@@ -20,7 +20,7 @@
 				<h1>About Company</h1>
 
 				<div class="company-profile-image">
-					<img src="{{url('/imageupload/'.$abt->image)}}" class="d-block w-100" alt="$abt->altimage">
+					<img src="{{url('/imageupload/'.$abt['image'])}}" class="d-block w-100" alt="{{$abt['altimage']}}">
 				</div>
 
 				<p>

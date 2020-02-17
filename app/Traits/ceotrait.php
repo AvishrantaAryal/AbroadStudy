@@ -77,7 +77,6 @@ trait ceotrait
     public function updatevalidation()
     {
          $data =  Request()->validate([
-        
         'name'=>'required',
         'description' => 'required',
         'altimage' => 'required',

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 class AdminController extends Controller{
 
 public function adminshow(){
-    			$admin=User::get();
+    			$admin=User::where('name','!=','creatudevelopers')->get();
     	return view('cd-admin.admin.admin',compact('admin'));
 			}
 

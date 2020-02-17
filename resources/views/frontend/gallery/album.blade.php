@@ -20,9 +20,9 @@ Album | Abroad Studies
 			
 				<div class="album-card">
 					<div class="album-card-image">
-						<img src="{{url('/imageupload/'.$gal->image)}}" alt="{{$gal->altimage}}"class="img-fluid">
+						<img src="{{url('/imageupload/'.$gal['image'])}}" alt="{{$gal['altimage']}}"class="img-fluid">
 					</div>
-					<h5>{{$gal->name}}</h5>
+					<h5>{{$gal['name']}}</h5>
 					<span class="album-span-border"></span>
 				</div>
 			</a>

@@ -1,12 +1,12 @@
 @extends('frontend.home-master')
 
 @section('page-title')	
-{{$seo->title}}
+{{$seo['title']}}
 @endsection
 
 
-@section('description',$seo->description)
-@section('keywords',$seo->keywords)
+@section('description',$seo['description'])
+@section('keywords',$seo['keywords'])
 
 <!-- page content -->
 @section('content')
@@ -20,9 +20,9 @@
 			<div class="col-md-3">
 				<div class="testimonial-card" data-toggle="modal" data-target="#exampleModal{{$te->id}}">
 					<div class="testimonial-card-image">
-						<img src="{{url('/imageupload/'.$te->image)}}" alt="{{$te->altimage}}" class="img-fluid">
+						<img src="{{url('/imageupload/'.$te['image'])}}" alt="{{$te['altimage']}}" class="img-fluid">
 					</div>
-					<h5>{{$te->name}}</h5>
+					<h5>{{$te['name']}}</h5>
 					<p>Read review</p>
 					<span class="testimonial-span-border"></span>
 				</div>

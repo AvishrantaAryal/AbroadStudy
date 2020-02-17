@@ -96,14 +96,7 @@
                 </ul>
             </li>
 
-             <li class="header">Carousel</li>
-            <li class="treeview">
-                <a href="{{url('/carousel-view')}}">
-                    <i class="fa fa-picture-o"></i> <span>Carousel</span>
-                    
-                </a>
-                
-            </li>
+             <!-- <li class="header">Carousel</li> -->
             
             <li class="header">About</li>
             <li class="treeview">
@@ -120,6 +113,22 @@
                 </ul>
             </li>
 
+            <li class="treeview">
+                <a href="{{url('/service-view')}}">
+                    <i class="fa fa-list-alt"></i> <span>Services</span>
+                    
+                </a>
+                
+            </li>
+
+            <li class="treeview">
+                <a href="{{url('/team-view')}}">
+                    <i class="fa fa-users"></i> <span>Teams</span>
+                    
+                </a>
+                
+            </li>
+
             <li class="header">Gallery</li>
             <li class="treeview">
                 <a href="#">
@@ -133,26 +142,21 @@
                     <li><a href="{{url('/album-view')}}"><i class="fa fa-circle-o"></i>View Album </a></li>
                 </ul>
             </li>
-            
-            <li class="header">Service</li>
             <li class="treeview">
-                <a href="{{url('/service-view')}}">
-                    <i class="fa fa-list-alt"></i> <span>Services</span>
-                    
-                </a>
-                
-            </li>
-
-                <li class="header">Teams</li>
-            <li class="treeview">
-                <a href="{{url('/team-view')}}">
-                    <i class="fa fa-users"></i> <span>Teams</span>
+                <a href="{{url('/carousel-view')}}">
+                    <i class="fa fa-picture-o"></i> <span>Carousel</span>
                     
                 </a>
                 
             </li>
             
-            <li class="header">Class</li>
+            <!-- <li class="header">Service</li> -->
+        
+<!-- 
+                <li class="header">Teams</li> -->
+            
+            
+            <li class="header">Study Abroad</li>
             <li class="treeview">
                 <a href="{{url('/class-view')}}">
                     <i class="fa fa-list-alt"></i> <span>Classes</span>
@@ -161,17 +165,16 @@
                 
             </li>
 
-            <li class="header">Study Destination</li>
             <li class="treeview">
                 <a href="{{url('/study-view')}}">
-                    <i class="fa fa-list-alt"></i> <span>Our Destination</span>
+                    <i class="fa fa-map-marker"></i> <span>Our Destination</span>
                     
                 </a>
                 
             </li>
 
 
-            <li class="header">Testimonial</li>
+            <li class="header">Message And Feedbacks</li>
             <li class="treeview">
                 <a href="{{url('/testimonials-view')}}">
                     <i class="fa fa-industry"></i> <span>Testimonials</span>
@@ -179,7 +182,6 @@
                 </a>
                 
             </li>
-            <li class="header">Contact</li>
             
             <li class="treeview">
                 <a href="#">
@@ -196,7 +198,7 @@
                 </ul>
             </li>
 
-            <li class="header">SEO</li>
+            <li class="header">Others</li>
             <li class="treeview">
                 <a href="{{url('/seo-view')}}">
                     <i class="fa fa-circle"></i> <span>SEO</span>

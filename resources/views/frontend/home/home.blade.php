@@ -2,12 +2,12 @@
 
 <!-- page title -->
 @section('page-title')	
-{{$seo->title}}
+{{$seo['title']}}
 @endsection
 
 
-@section('description',$seo->description)
-@section('keywords',$seo->keywords)
+@section('description',$seo['description'])
+@section('keywords',$seo['keywords'])
 
 <!-- page content -->
 @section('content')
@@ -22,17 +22,17 @@
 		</ol>
 		<div class="carousel-inner home-carousel-card">
 			<div class="carousel-item home-carousel-image active">
-				<img src="{{url('/imageupload/'.$getonecarosels->image)}}" class="d-block w-100" alt="$getonecarosels->altimage">
+				<img src="{{url('/imageupload/'.$getonecarosels['image'])}}" class="d-block w-100" alt="{{$getonecarosels['altimage']}}">
 				<div class="carousel-caption d-none d-md-block">
 					
-					<p>{!!$getonecarosels->summary!!}</p>
+					<p>{!!$getonecarosels['summary']!!}</p>
 				</div>
 			</div>
 				@foreach($getcarosels as $getcarosel)
 			<div class="carousel-item home-carousel-image">
-				<img src="{{url('/imageupload/'.$getcarosel->image)}}" class="d-block w-100" alt="$getcarosel->altimage">
+				<img src="{{url('/imageupload/'.$getcarosel['image'])}}" class="d-block w-100" alt="{{$getcarosel['altimage']}}">
 				<div class="carousel-caption d-none d-md-block">
-					<p>{!!$getcarosel->summary!!}</p>
+					<p>{!!$getcarosel['summary']!!}</p>
 				</div>
 			</div>
 			@endforeach
@@ -58,16 +58,16 @@
 				<div class="home-country-inner-card">
 					<div class="home-country-detail">
 						<h6><i class="fa fa-home"></i></h6>
-						<h4>{{$std->title}}</h4>
+						<h4>{{$std['title']}}</h4>
 
-						<p>{!! Str::limit($std->summary, 100) !!}</p>
+						<p>{!! Str::limit($std['summary'], 100) !!}</p>
 						<a href="{{url('study-abroad-dynamic/'.$std->id)}}">Read More</a>
 					</div>
 					<div class="home-country-image">
-						<img src="{{url('/imageupload/'.$std->image)}}" class="d-block w-100" alt="$std->altimage">
+						<img src="{{url('/imageupload/'.$std['image'])}}" class="d-block w-100" alt="{{$std['altimage']}}">
 					</div>
 					<div class="home-country-text">
-						<h4><i class="fa fa-home"></i> Qualified {{$std->title}}</h4>
+						<h4><i class="fa fa-home"></i> Qualified {{$std['title']}}</h4>
 					</div>
 				</div>
 			</div>
@@ -94,8 +94,8 @@
 				<a href="{{url('service')}}">
 					<div class="home-service-card">
 						<h6>{{$loop->iteration}}</h6>
-						<h4>{{$ser->title}}</h4>
-						<p>{!!strip_tags($ser->summary)!!}</p>
+						<h4>{{$ser['title']}}</h4>
+						<p>{!!strip_tags($ser['summary'])!!}</p>
 
 					</div>
 				</a>
@@ -168,17 +168,17 @@
 	<div class="row">
 		@foreach($class as $cl)
 		<div class="col-md-3">
-			<a href="{{url('class-dynamic/'. $cl->title)}}">
+			<a href="{{url('class-dynamic/'. $cl['title'])}}">
 				<div class="home-course-card">
 					<div class="home-course-image">
 						<!--
 						<h6>Rs 100/-</h6>
 					-->
-							<img src="{{url('/imageupload/'.$cl->image)}}" class="d-block w-100" alt="$cl->altimage">
+							<img src="{{url('/imageupload/'.$cl['image'])}}" class="d-block w-100" alt="{{$cl['altimage']}}">
 					</div>
 					<div class="home-course-detail">
-						<h4>{{$cl->title}}</h4>
-						<p>{{$cl->summary}}</p>
+						<h4>{{$cl['title']}}</h4>
+						<p>{{$cl['summary']}}</p>
 					</div>
 				</div>
 			</a>

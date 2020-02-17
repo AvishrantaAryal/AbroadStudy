@@ -11,42 +11,24 @@
 |
 */
 
+//Front End
 Route::get('/','FrontendController@home') ;
-    
-
 Route::get('home','FrontendController@home');
-
-
 Route::get('pagenotfound',['as' => 'notfound','uses' => 'FrontendController@pagenotfound']);
-
-
-
-
 Route::get('company-profile','FrontendController@companyprofile');
-
 Route::get('message-from-ceo','FrontendController@message');
-
 Route::get('our-team','FrontendController@team'); 
- 
-
 Route::get('service','FrontendController@service');
-
 Route::get('service-detail/{id}','FrontendController@servicedetails');
-   
-
 Route::get('study-abroad-dynamic/{id}','FrontendController@studyabroad');
-
 Route::get('testimonial','FrontendController@testimonial');
-
 Route::get('album','FrontendController@album');
-
 Route::get('gallery/{id}','FrontendController@gallery');
-
 Route::get('class-dynamic/{title}','FrontendController@classdetails');
-
 Route::get('contact', 'FrontendController@contact');
 Route::post('/storecontact','ContactController@store');
 
+//Back End
 
 Auth::routes(['register' => false]);
 Route::get('/admin', 'HomeController@index')->name('home');
@@ -143,7 +125,6 @@ Route::get('/createcontact','ContactController@addcontact');
 Route::get('/viewcontact','ContactController@contact');
 Route::get('/replies','ContactController@reply');
 Route::get('/replycontact/{id}','ContactController@replyform');
-
 Route::post('/storereply/{id}','ContactController@storereply');
 Route::get('/deleteinbox/{id}','ContactController@deleteinbox');
 Route::get('/deletereply/{id}','ContactController@deletereply');
